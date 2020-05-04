@@ -1,0 +1,1 @@
+1. Notice you can add a budget email alert via Navigation(top left) -> Billing -> Budget, so that from any amount charged you get an email.
