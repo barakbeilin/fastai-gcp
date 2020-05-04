@@ -1,15 +1,15 @@
 1.  I was going for the GCP platform (https://course.fast.ai/start_gcp.html)
 Everything was smooth until the middle of step 2.
 To create a project I had to add credentials from cli but didn't succeed.
-I followed the instructions that say to add api credintial but didn't work, instead I've added a project thrhough the site.
+I followed the instructions that say to add api credential but didn't work, instead I've added a project through the site.
 
-2. Since I wanted to use a GPU I had to give my credit (HEVER card) to get the upgraded account.
+2. Since I wanted to use a GPU I had to give my credit to get the upgraded account.
 3. Step 3 is also faulty, to create an instance I had to 
-    a. Increase the limit on the GCP site (the fastai explain it breifly)
+    a. Increase the limit on the GCP site (the fastai explain it briefly)
     b. It can take up to 2 days, it took me 10 seconds to get an approval.
-    c. The instruction for creatign an instance also need to be changed,
+    c. The instruction for creating an instance also need to be changed,
           
-        The instance requried in the tutorial was `n2d-highmem-8` which is not avaiable with GPU in the zones I look.
+        The instance required in the tutorial was `n2d-highmem-8` which is not available with GPU in the zones I look.
         So I changed to `n1-highmem-8`, plus I changed the zone to europe-west1-b :
         ```
             gcloud compute instances create $INSTANCE_NAME \
@@ -24,7 +24,7 @@ I followed the instructions that say to add api credintial but didn't work, inst
                             --preemptible
         ```
 
-        after runnign go to the GCP instance list and press `ssh` and find `View gcloud command` to run the gcp instance.
+        after running go to the GCP instance list and press `ssh` and find `View gcloud command` to run the gcp instance.
 
 
 
@@ -38,7 +38,7 @@ I followed the instructions that say to add api credintial but didn't work, inst
     ```gcloud beta compute ssh --zone "europe-west1-b" "my-fastai-instance" --project "black-network-275911"```
 ************ NOW YOU ARE IN THE INSTANCE FROM SSH! ~~~~~~~~~~~~~
 
-4. Setting work environent
+4. Setting work environment
     a. To ssh the machine :
      ```
       gcloud compute ssh --zone=$ZONE jupyter@$INSTANCE_NAME -- -L 8080:localhost:8080
@@ -50,7 +50,7 @@ I followed the instructions that say to add api credintial but didn't work, inst
         ```
         conda install -c fastai fastai
         ```
-    d. As explained in the tutorail to access the Jupyter notebook
+    d. As explained in the tutorial to access the Jupyter notebook
     write on the local host browser:
     ```
     http://localhost:8080/tree
