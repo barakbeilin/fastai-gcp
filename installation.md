@@ -12,8 +12,11 @@ I followed the instructions that say to add api credential but didn't work, inst
         The instance required in the tutorial was `n2d-highmem-8` which is not available with GPU in the zones I look.
         So I changed to `n1-highmem-8`, plus I changed the zone to europe-west1-b :
         ```
+            export IMAGE_FAMILY="pytorch-latest-gpu" # or "pytorch-latest-cpu" for non-GPU instances
+            export ZONE="us-west1-b"
+            export INSTANCE_NAME="fastai-us"
             gcloud compute instances create $INSTANCE_NAME \
-                            --zone=europe-west1-b \
+                            --zone=$ZONE \
                             --image-family=$IMAGE_FAMILY \
                             --image-project=deeplearning-platform-release \
                             --maintenance-policy=TERMINATE \
@@ -36,6 +39,8 @@ I followed the instructions that say to add api credential but didn't work, inst
             ```
     and send : 
     ```gcloud beta compute ssh --zone "europe-west1-b" "my-fastai-instance" --project "black-network-275911"```
+    or the following to start a Jupyter notebook environment with tunneling to the local machine :
+    ```gcloud compute ssh --zone "europe-west1-b" "my-fastai-instance" -- -L 8080:localhost:8080```
 ************ NOW YOU ARE IN THE INSTANCE FROM SSH! ~~~~~~~~~~~~~
 
 4. Setting work environment
