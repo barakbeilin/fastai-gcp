@@ -1,0 +1,32 @@
+
+
+
+export IMAGE_FAMILY="pytorch-latest-gpu"
+export ZONE="europe-west1-d"
+export INSTANCE_NAME="fastai-non-preept"
+gcloud compute instances create $INSTANCE_NAME \
+                --zone=$ZONE \
+                --image-family=$IMAGE_FAMILY \
+                --image-project=deeplearning-platform-release \
+                --maintenance-policy=TERMINATE \
+                --machine-type="n1-highmem-8" \
+                --accelerator="type=nvidia-tesla-p100,count=1" \
+                --boot-disk-size=200GB \
+                --metadata="install-nvidia-driver=True" 
+                
+
+
+
+export IMAGE_FAMILY="tf-latest-gpu"
+export ZONE="europe-west1-d"
+export INSTANCE_NAME="tensorflow-non-preept"
+gcloud compute instances create $INSTANCE_NAME \
+                --zone=$ZONE \
+                --image-family=$IMAGE_FAMILY \
+                --image-project=deeplearning-platform-release \
+                --maintenance-policy=TERMINATE \
+                --machine-type="n1-highmem-8" \
+                --accelerator="type=nvidia-tesla-p100,count=1" \
+                --boot-disk-size=200GB \
+                --metadata="install-nvidia-driver=True" 
+                
