@@ -1,0 +1,148 @@
+import pandas as pd
+f = open('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt','r')
+l = f.readlines()
+len(l)
+import os
+os.listdir('/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_2')
+l = ['/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_2/'+fn  for fn in os.listdir('/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_2')]
+l
+pd.DataFrame(l)
+df = pd.DataFrame(l)
+df = pd.DataFrame(l, columns=['name'])
+df
+df['label']=0
+df
+df.to_csv('DISC_KITTI_VAL.txt')
+
+
+import pandas as pd
+f = open('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt','r')
+l = f.readlines()
+len(l)
+import os
+os.listdir('/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_2')
+l = ['/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_2/'+fn  for fn in os.listdir('/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_2')]
+l
+pd.DataFrame(l)
+df = pd.DataFrame(l)
+df = pd.DataFrame(l, columns=['name'])
+df
+df['label']=0
+df
+df.to_csv('DISC_KITTI_VAL.txt')
+history
+cwd
+pwd
+df
+orig_df= pd.from_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt')
+orig_df= pd.read_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt')
+orig_df
+orig_df= pd.read_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt',columns=['name'])
+orig_df= pd.read_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt')
+orig_df
+orig_df['label']=1
+orig_df
+orig_df=orig_df.iloc[0::2]
+orig_df
+df
+df_total = df
+df_total = df + orig_df
+df_total
+df_total = df
+df_total = df.append(orig_df)
+df_total
+l = ['/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_3/'+fn  for fn in os.listdir('/home/ubuntu/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/testing/image_3')]
+l
+len(l)
+import glob
+root_dir = '/home/ubuntu/tDSIN/src/dsin/disc_data'; l = [ for filename in glob.iglob(root_dir + '**/*.png', recursive=True)]
+root_dir = '/home/ubuntu/tDSIN/src/dsin/disc_data'; l = [ filename for filename in glob.iglob(root_dir + '**/*.png', recursive=True)]
+l
+root_dir = '/home/ubuntu/tDSIN/src/dsin/disc_data'; l = [ filename for filename in glob.glob(root_dir + '**/*.png', recursive=True)]
+l
+root_dir = '/home/ubuntu/tDSIN/src/dsin/disc_data'; l = [ filename for filename in glob.glob(root_dir + '*/*.png', recursive=True)]
+l
+root_dir = '/home/ubuntu/tDSIN/src/dsin/disc_data'; l = [ filename for filename in glob.glob(root_dir + '*.png', recursive=True)]
+l
+root_dir = '/home/ubuntu/tDSIN/src/dsin/disc_data'; l = [ filename for filename in glob.glob(root_dir + '*.png')]
+l
+glob.glob(root_dir + '*.png')
+root_dir
+glob.glob(root_dir + '/*.png')
+glob.glob(root_dir + '**/*.png')
+glob.glob(root_dir + '**/*.png',recursive=True)
+root_dir
+glob.glob(root_dir + '*',recursive=True)
+glob.glob(root_dir + '/*',recursive=True)
+glob.glob(root_dir + '/**',recursive=True)
+glob.glob(root_dir + '/**.png',recursive=True)
+glob.glob(root_dir + '/***.png',recursive=True)
+glob.glob(root_dir + '/**/*.png',recursive=True)
+l = glob.glob(root_dir + '/**/*.png',recursive=True)
+len(l)
+from pathlib import Path
+Path(l[0]).parts
+Path(l[0]).parts.index('disc_data')
+Path(l[0])[6:]
+Path(l[0]).parts[6:]
+PathPath(l[0]).parts[6:]
+Path('/'.join(Path(l[0]).parts[6:]))
+Path('/'.join(Path(l[0]).parts[7:]))
+l =[ Path('/'.join(Path(fn).parts[7:]))  for fn in glob.glob(root_dir + '/**/*.png',recursive=True)]
+l
+l =[ str(Path('/'.join(Path(fn).parts[7:])))  for fn in glob.glob(root_dir + '/**/*.png',recursive=True)]
+l
+df = pd.DataFrame(l, columns=['name'])
+fg
+df
+df['label']= 0
+df
+df.to_csv('DISC_KITTI_VAL.txt')
+df_org = pd.read_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt')
+df_org
+df_org = pd.read_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt')
+df_org
+df_org
+df_org = pd.read_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt')
+df_org
+df['name']='data'+df['name']
+df
+df_org = pd.read_csv('/home/ubuntu/tDSIN/src/dsin/data/KITTI_stereo_val.txt')
+df_org
+df
+df_bad = pd.read_csv('/home/ubuntu/tDSIN/DISC_KITTI_VAL.txt')
+df_Bad
+df_bad
+df_bad['name']=df_bad['name']+'disc_data/'
+df_bad
+df_bad = pd.read_csv('/home/ubuntu/tDSIN/DISC_KITTI_VAL.txt')
+df_bad
+df_bad['name']='disc_data/'+df_bad['name']
+df_bad
+df_bad.to_csv('/home/ubuntu/tDSIN/DISC_KITTI_VAL.txt')
+df
+df = pd.DataFrame(l, columns=['name'])
+df
+df['name']='data/'+df['name']
+df
+df['label']=1
+df
+df_Bad
+df_bad
+df.appen(df_bad)
+df.append(df_bad)
+df=df[['name','label']]
+df
+df['label']
+df['label'].tolist()
+df
+df_bad
+df.appen(df_bad)
+df_tot=df.append(df_bad)
+df_tot
+df_tot = df_tot[['name','label']]
+df_tot
+len(df_tot)
+df_tot.to_csv('disc_tot')
+df_tot.to_csv('disc_tot.txt')
+history
