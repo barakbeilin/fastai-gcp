@@ -7,6 +7,8 @@ Host personal
     IdentityFile ~/Downloads/london_ami_key.pem
 
 
+
+
 Host <host name in vscode (arbitrary)>
     HostName <dns public name of my instance>
     User <user in the instance>
@@ -14,15 +16,20 @@ Host <host name in vscode (arbitrary)>
 
 copy stuff from s3:
 ```
-aws s3 cp --recursive s3://dsin-us/data_scene_flow_multiview ~/tDSIN/src/dsin/data/data_scene_flow_multiview/
-aws s3 cp --recursive s3://dsin-us/data_data_stereo_flow_multiview ~/tDSIN/src/dsin/data/data_stereo_flow_multiview/
-aws s3 cp  s3://dsin-us/models/200816MAE-l2reg-baseline-1.pth ~/tDSIN/src/dsin/data/models/
-aws s3 cp --recursive s3://dsin-us/disc_data/data_scene_flow_multiview ~/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/
-aws s3 cp --recursive s3://dsin-us/disc_data/data_stereo_flow_multiview ~/tDSIN/src/dsin/disc_data/data_stereo_flow_multiview/
 
-base-generator-model 
-s3://dsin-us/models/200816MAE-l2reg-res-si-new-normalize-4.pth.log
+cd tDSIN/ ; git pull ; git checkout cuda_aws_si_option; conda activate tfastai; pip install -e .
+
+
+aws s3 cp --recursive s3://dsin-us/data_scene_flow_multiview ~/tDSIN/src/dsin/data/data_scene_flow_multiview/ &
+aws s3 cp --recursive s3://dsin-us/data_data_stereo_flow_multiview ~/tDSIN/src/dsin/data/data_stereo_flow_multiview/ &
+aws s3 cp --recursive s3://dsin-us/disc_data/data_scene_flow_multiview ~/tDSIN/src/dsin/disc_data/data_scene_flow_multiview/ &
+aws s3 cp --recursive s3://dsin-us/disc_data/data_stereo_flow_multiview ~/tDSIN/src/dsin/disc_data/data_stereo_flow_multiview/ &
+aws s3 cp  s3://dsin-us/models/200816MAE-l2reg-res-si-new-normalize-4.pth ~/tDSIN/src/dsin/data/models/ &
+aws s3 cp  s3://dsin-us/models/200816MAE-l2reg-baseline-1.pth ~/tDSIN/src/dsin/data/models/ &
+
 
 ```
 
-/200816MAE-l2reg-res-si-nofeatloss-4.pth
+
+2020-09-04try2MSSIM-l2reg-baseline-bpp0p30-16'
+'2020-09-05sinet-MAE-l2reg-si-nofeat-bpp0p30-3
